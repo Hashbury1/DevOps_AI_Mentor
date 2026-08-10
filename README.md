@@ -1,46 +1,42 @@
-# DevOpsMentor AI v0.1
+# DevOpsMentor AI v0.4
 
-Personal AI-powered DevOps interview coach.
+## Phase 3 — Stateful Incident Engine
 
-## First vertical slice
+This version replaces the simple evidence buttons with a natural-language investigation loop.
 
-- Choose a topic and difficulty.
-- Start an adaptive interview.
-- Answer questions.
-- Receive rubric-based AI evaluation.
-- Get a follow-up question.
-- Finish with a performance report.
-- Store sessions locally in SQLite.
+### What is implemented
 
-## Stack
+- Incident state
+- Evidence tracking
+- Action tracking
+- Hypothesis recording
+- Mitigation state
+- Natural-language investigation endpoint
+- Final diagnosis submission
+- Incident investigation UI
 
-- Python 3.11+
-- FastAPI
-- SQLite + SQLAlchemy
-- OpenAI Python SDK / Responses API
-- HTML/CSS/JavaScript frontend served by FastAPI
-
-## Run
+### Run
 
 ```bash
 cd backend
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
-# Add OPENAI_API_KEY to .env
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8001
 ```
 
-Open http://127.0.0.1:8000
+Open:
 
-If no API key is configured, deterministic demo mode lets you test the full interview flow.
+http://127.0.0.1:8001/incident.html
 
-## Next milestones
+### Try this investigation
 
-1. Expand the DevOps knowledge base.
-2. Improve adaptive scoring.
-3. Add production incident simulations.
-4. Add persistent skill profiles.
-5. Add RAG/vector retrieval.
-6. Add a richer Next.js UI.
+Do not simply request everything in order. Think like an interview candidate.
+
+For example:
+
+> I'll first check the ALB metrics and target response time.
+
+Then investigate based on what you see.
+
+The next milestone is the AI evaluation layer, which will judge the investigation process rather than only the final answer.

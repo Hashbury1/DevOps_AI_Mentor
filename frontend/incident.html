@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DevOpsMentor AI — Incident</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<main class="shell">
+<header><p class="eyebrow">SEV-2 PRODUCTION INCIDENT</p><h1>Incident Investigation</h1></header>
+<section id="briefing" class="card"></section>
+<section class="layout">
+<div>
+<section class="card">
+<h2>Investigation conversation</h2>
+<div id="chat" class="chat"></div>
+<form id="form">
+<textarea id="message" rows="4" placeholder="Example: Check the ALB metrics and target response time." required></textarea>
+<button>Investigate</button>
+</form>
+</section>
+<section class="card">
+<h2>Final diagnosis</h2>
+<textarea id="diagnosis" rows="8" placeholder="Explain the root cause, evidence, mitigation, and prevention plan."></textarea>
+<button id="submitDiagnosis">Submit diagnosis</button>
+<div id="diagnosisResult"></div>
+</section>
+</div>
+<aside>
+<section class="card"><h3>Investigation state</h3><div id="state"></div></section>
+<section class="card"><h3>Suggested evidence</h3>
+<p>ALB metrics</p><p>Target health</p><p>Application logs</p><p>VPC Flow Logs</p><p>Route tables</p><p>Security groups</p><p>RDS metrics</p><p>Deployment history</p>
+</section></aside>
+</section>
+</main>
+<script src="/incident.js"></script>
+</body></html>
