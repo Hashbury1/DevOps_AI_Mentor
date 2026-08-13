@@ -1,4 +1,4 @@
-# DevOpsMentor AI v0.4
+# DevOpsMentor AI
 
 ## Phase 3 — Stateful Incident Engine
 
