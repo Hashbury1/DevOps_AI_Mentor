@@ -1,22 +1,8 @@
-# DevOpsMentor AI
+# DevOpsMentor AI v0.5
 
-## Phase 3 — Stateful Incident Engine
+Phase 3 Evaluation Engine.
 
-This version replaces the simple evidence buttons with a natural-language investigation loop.
-
-### What is implemented
-
-- Incident state
-- Evidence tracking
-- Action tracking
-- Hypothesis recording
-- Mitigation state
-- Natural-language investigation endpoint
-- Final diagnosis submission
-- Incident investigation UI
-
-### Run
-
+Run:
 ```bash
 cd backend
 python -m venv .venv
@@ -25,18 +11,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8001
 ```
 
-Open:
+Open http://127.0.0.1:8001/incident.html
 
-http://127.0.0.1:8001/incident.html
-
-### Try this investigation
-
-Do not simply request everything in order. Think like an interview candidate.
-
-For example:
-
-> I'll first check the ALB metrics and target response time.
-
-Then investigate based on what you see.
-
-The next milestone is the AI evaluation layer, which will judge the investigation process rather than only the final answer.
+The evaluator scores triage, evidence gathering, hypotheses, AWS reasoning,
+prioritization, mitigation, root cause and prevention.
