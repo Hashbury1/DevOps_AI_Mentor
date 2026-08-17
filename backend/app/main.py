@@ -1,14 +1,10 @@
 from pathlib import Path
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from .incident_api import router as incident_router
+from .incident_api import router
 
-app = FastAPI(title="DevOpsMentor AI", version="0.4.0")
-app.include_router(incident_router)
-
+app=FastAPI(title="DevOpsMentor AI",version="0.5.0")
+app.include_router(router)
 @app.get("/api/health")
-def health():
-    return {"status": "ok", "version": "0.4.0"}
-
-frontend_dir = Path(__file__).resolve().parents[2] / "frontend"
-app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+def health(): return {"status":"ok","version":"0.5.0"}
+app.mount("/",StaticFiles(directory=Path(__file__).resolve().parents[2]/"frontend",html=True),name="frontend")
